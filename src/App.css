@@ -1,0 +1,106 @@
+:root {
+  --normal-blue: rgb(147, 207, 226);
+  --darker-blue: rgb(119, 181, 200);
+  --bg: rgb(243, 35, 35);
+  --card: rgb(236, 113, 113);
+  --scale-size: 1.05;
+}
+
+body{
+  font-family: "Noto Sans", sans-serif;
+  padding: 1rem 6rem; /* 2rem top & bottom, 6rem left & right*/
+  background-color: var(--bg);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+body.stage-none {
+  --bg: rgb(243, 35, 35);
+  --card: rgb(236, 113, 113);
+}
+body.stage-some {
+  --bg: rgb(235, 153, 45);
+  --card: rgb(235, 186, 118);
+}
+body.stage-all {
+  --bg: rgb(156, 218, 63);
+  --card: rgb(193, 240, 123);
+}
+/*Giving the input boxes and buttons the same font as the body*/
+input, button {
+  font: inherit;
+}
+.container{
+  text-align: center;
+}
+.done {
+  color: gray;
+  text-decoration: line-through;
+}
+.card{
+  background-color: var(--card);
+  /*The text-align from the container only affects text, not block elements/divs like this one*/
+  margin: 20px auto;
+  padding: 10px; /*reduced padding so more cards can fit on screen*/
+  width: 300px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.card:hover{
+  transform: scale(var(--scale-size));
+}
+/*accessing the input box of the card div*/
+.card input {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+button {
+  cursor: pointer;
+}
+.tickButton{
+  margin-left: 5px;
+  background: none;
+  border: none;
+  vertical-align: middle;
+  color:white;
+  transition: all 0.2s ease;
+}
+.tickButton:hover {
+  transform: scale(1.05);
+}
+.deleteBtn {
+  background: none;
+  border: none;
+  color:white;
+}
+.addButton {
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  color: white;
+  background-color: var(--normal-blue);
+  transition: all 0.2s ease;
+}
+.addButton:hover {
+  background-color:var(--darker-blue); /*slightly darker*/
+  transform:scale(var(--scale-size)); /*slightly bigger*/
+}
+.taskList {
+  max-height: 370px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+/* Scrollbar styles for Chrome, Safari, Edge */
+.taskList::-webkit-scrollbar-track {
+  background: transparent;   /* see-through background */
+}
+
+.taskList::-webkit-scrollbar-thumb {
+  background-color: white;   /* scrollbar thumb is white */
+  border-radius: 10px;       /* rounded edges */
+}
+/* Scrollbar styles for Firefox */
+.taskList {
+  scrollbar-color: white transparent; /* thumb white, track transparent */
+}
