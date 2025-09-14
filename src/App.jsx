@@ -3,9 +3,7 @@ import './App.css'
 import Card from './Components/Card.jsx'
  //Flow: App -> Card -> App, reflecting new change
 function App() {
-  const[tasks, setTasks] = useState([
-    {text: "", completed: false}
-  ]); //starting with an empty array of tasks
+  const[tasks, setTasks] = useState([]); //starting with an empty array of tasks
 
   //For changing (ANY) existing task, using the index to identify which one is being changed
   const handleChange = (index, newValue) => {
